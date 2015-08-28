@@ -1,0 +1,49 @@
+head
+  title thmly
+  link(rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css")
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+  script(src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js")
+
+body
+  +navbar
+  +vienna
+
+template(name="navbar")
+  nav.navbar.navbar-light.bg-faded
+    a.navbar-brand(href='#') Navbar
+    ul.nav.navbar-nav
+      li.nav-item.active
+        a.nav-link(href='#')
+          | Home
+          span.sr-only (current)
+      li.nav-item
+        a.nav-link(href='#') Features
+      li.nav-item
+        a.nav-link(href='#') Pricing
+      li.nav-item
+        a.nav-link(href='#') About
+    form.form-inline.navbar-form.pull-right
+      input.form-control(type='text', placeholder='Search')
+      button.btn.btn-success-outline(type='submit') Search
+
+
+template(name="vienna")
+  .vienna
+    .container
+      .head
+        .row
+          .col-md-12
+            AVatar
+        .row
+          .col-md-12
+            h5 John Legend
+        .row
+          .col-md-12
+            p.bio And they say this is Christmas, but what have we done nothing of interesting except for some crackers and stuff
+      .index
+        .post
+          h1 I will never be made aware of how to play the Dane
+          h5.date May 2015
+        .post
+          h1 I once cracked the boards in my youth
+          h5.date April 2015
