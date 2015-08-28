@@ -1,47 +1,16 @@
 head
   title thmly
-  link(rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css")
-  script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-  script(src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js")
 
 body
   +navbar
   +vienna
-
-template(name="navbar")
-  nav.navbar.navbar-light.bg-faded
-    a.navbar-brand(href='#') Navbar
-    ul.nav.navbar-nav
-      li.nav-item.active
-        a.nav-link(href='#')
-          | Home
-          span.sr-only (current)
-      li.nav-item
-        a.nav-link(href='#') Features
-      li.nav-item
-        a.nav-link(href='#') Pricing
-      li.nav-item
-        a.nav-link(href='#') About
-    form.form-inline.navbar-form.pull-right
-      input.form-control(type='text', placeholder='Search')
-      button.btn.btn-success-outline(type='submit') Search
-
+  +footer
 
 template(name="vienna")
   .vienna
+    +mast
     .container
-      .head
-        .row
-          .col-md-12
-            AVatar
-        .row
-          .col-md-12
-            h5 John Legend
-        .row
-          .col-md-12
-            p.bio And they say this is Christmas, but what have we done nothing of interesting except for some crackers and stuff
-      .index
-        +index
+      +index
 
 template(name="index")
   .index
@@ -50,5 +19,30 @@ template(name="index")
 
 template(name="post")
   .post
-    h1 #{title}
+    h3 #{title}
     h5.date #{location}
+
+template(name="footer")
+  footer.footer.text-muted
+    .container
+      p.pull-right
+        a(href='#') Back to top
+      p Album example is © Bootstrap, but please download and customize it for yourself!
+      p
+        | New to Bootstrap?
+        a(href='../../') Visit the homepage
+        |  or read our
+        a(href='../../getting-started/') getting started guide
+        | .
+
+
+template(name="mast")
+    section.jumbotron.text-center
+      .container
+        img.avatar.img-circle(href="https://en.gravatar.com/userimage/27826342/d5659b2f24975ad394a0411b8ef79ed9.jpg")
+        h2.jumbotron-heading John Legend
+        p.lead.text-muted
+          | Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.
+        p
+          a.btn.btn-primary(href='#') Main call to action
+          a.btn.btn-secondary(href='#') Secondary action
