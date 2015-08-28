@@ -41,9 +41,14 @@ template(name="vienna")
           .col-md-12
             p.bio And they say this is Christmas, but what have we done nothing of interesting except for some crackers and stuff
       .index
-        .post
-          h1 I will never be made aware of how to play the Dane
-          h5.date May 2015
-        .post
-          h1 I once cracked the boards in my youth
-          h5.date April 2015
+        +index
+
+template(name="index")
+  .index
+    each posts
+      +post
+
+template(name="post")
+  .post
+    h1 #{title}
+    h5.date #{location}
