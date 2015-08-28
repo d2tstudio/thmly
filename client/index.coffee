@@ -1,7 +1,7 @@
 Posts = new Mongo.Collection(null)
 
 Template.index.rendered = ->
-    posts = Meteor.call "loadPosts", (error,results) ->
+    posts = Meteor.call "loadPosts", ("barcelona"), (error,results) ->
         if(error)
           console.log(error)
         else
